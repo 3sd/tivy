@@ -1,12 +1,43 @@
-.tivy-flex{
-  display: flex;
-  .tivy-main{
-    margin: 0 20px;
-    flex-grow: 1;
-  }
-  .tivy-right{
-    margin: 0 20px;
-    width: 300px;
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700');
+$default-font-family: 'Poppins';
+$heading-font-family: $default-font-family;
+$lightGrey: #dddddf;
+$s: 10px;
 
+* {
+  font-family: $default-font-family;
+  font-size: 14px;
+}
+
+h1{
+  font-size: 1.2em;
+}
+.tivy-grid-menu h2{
+  font-size: 1em;
+}
+body {
+  margin: 0;
+}
+
+.tivy-grid-container {
+  display: grid;
+  grid-template-columns: [menu] 200px [main] auto;
+  grid-template-rows: minmax(100vh, auto);
+}
+
+.tivy-grid-menu {
+  background-color: $lightGrey;
+  border-right: 1px solid silver;
+  padding: $s;
+}
+
+.tivy-grid-main {
+  padding: $s;
+}
+body.page-civicrm-contact-view .tivy-grid-main{
+  margin-top: 2em;
+  .crm-summary-display_name{
+    font-weight: 700;
+    font-size: 1.2em;
   }
 }

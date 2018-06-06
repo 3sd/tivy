@@ -1,8 +1,32 @@
-.tivy-flex {
-  display: flex; }
-  .tivy-flex .tivy-main {
-    margin: 0 20px;
-    flex-grow: 1; }
-  .tivy-flex .tivy-right {
-    margin: 0 20px;
-    width: 300px; }
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,700");
+* {
+  font-family: "Poppins";
+  font-size: 14px; }
+
+h1 {
+  font-size: 1.2em; }
+
+.tivy-grid-menu h2 {
+  font-size: 1em; }
+
+body {
+  margin: 0; }
+
+.tivy-grid-container {
+  display: grid;
+  grid-template-columns: [menu] 200px [main] auto;
+  grid-template-rows: minmax(100vh, auto); }
+
+.tivy-grid-menu {
+  background-color: #dddddf;
+  border-right: 1px solid silver;
+  padding: 10px; }
+
+.tivy-grid-main {
+  padding: 10px; }
+
+body.page-civicrm-contact-view .tivy-grid-main {
+  margin-top: 2em; }
+  body.page-civicrm-contact-view .tivy-grid-main .crm-summary-display_name {
+    font-weight: 700;
+    font-size: 1.2em; }
