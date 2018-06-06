@@ -1,12 +1,275 @@
-.tivy-flex{
-  display: flex;
-  .tivy-main{
-    margin: 0 20px;
-    flex-grow: 1;
+@import url('https://fonts.googleapis.com/css?family=Gothic+A1:400,700');
+@import url('https://fonts.googleapis.com/css?family=Muli:400,700');
+
+// Definitions
+$lightGrey: #eeeeec;
+$grey: #aaaaac;
+$darkGrey: #777779;
+$black: #222224;
+$white: #ffffff;
+$purple: #333daa;
+$orange: #fa6423;
+$blue: #3771c8;
+
+$default-font-family: 'Poppins';
+$default-font-size: 14px;
+$default-font-colour: $black;
+$heading-font-family: 'Poppins';
+$s: 10px;
+$s2: $s * 2;
+$so2: $s / 2;
+
+
+// Fonts
+*{
+  font-family: $default-font-family;
+  font-size: $default-font-size;
+}
+
+h1,h2,h3,h4,h5{
+  font-family: $heading-font-family;
+  font-weight: 700;
+}
+
+.crm-container a, .crm-container a:link, .crm-container a:visited,
+  .crm-container a.crm-hover-button.action-item, .crm-container .crm-hover-button.btn-slide,
+  #crm-recently-viewed a{
+  color: $blue;
+}
+
+// Page layout (uses css grid)
+body{
+  margin: 0;
+}
+
+.tivy-grid-container{
+  display: grid;
+  grid-template-columns: [menu] 200px [main] auto;
+  grid-template-rows: minmax(100vh, auto);
+
+}
+.tivy-grid-menu{
+  background-color: $lightGrey;
+  border-right: 1px solid silver;
+  padding: $s;
+
+}
+.tivy-grid-main{
+  padding: $s;
+  background-color: $lightGrey;
+}
+
+
+// civicrm resets
+
+#crm-container.crm-container{
+  .crm-form-block,
+  .crm-tasks,
+  .crm-search-tasks,
+  .crm-pager{
+    background-color: $white;
+    color: $default-font-colour;
+    padding: $s2;
   }
-  .tivy-right{
-    margin: 0 20px;
-    width: 300px;
+}
+#crm-container div.crm-summary-row{
+  background-color: $white;
+}
+
+#crm-container div.crm-summary-contactname-block{
+  margin: 0px;
+}
+// * footer font size
+.crm-container .crm-footer{
+  font-size: $default-font-size;
+}
+
+// buttons
+.crm-container a.button, .crm-container a.button:link, .crm-container a.button:visited, .crm-container input.crm-form-submit, .crm-container .ui-dialog-buttonset .ui-button, .crm-container input[type=button], .crm-container .crm-button{
+   background-color: $purple;
+   background-image: none;
+   border: none;
+   border-radius: 0px;
+   padding:8px;
+   text-shadow: none;
+   font-weight: 700;
+}
+
+.ui-widget-header{
+  background: none;
+  background-color: $darkGrey;
+  border-radius: 0;
+  border: none;
+}
+
+.ui-corner-all,
+.ui-corner-top,
+.ui-corner-right,
+.ui-corner-bottom,
+.ui-corner-left,
+.ui-corner-tl,
+.ui-corner-tr,
+.ui-corner-bl,
+.ui-corner-br,
+{
+  border-radius: 0;
+}
+
+.ui-tabs{
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  border: none;
+}
+
+.crm-container .ui-tabs .ui-tabs-nav{
+  padding: 0;
+}
+
+.ui-widget.ui-widget-content{
+  border: none;
+}
+
+#crm-container .ui-tabs .ui-tabs-panel{
+  padding: $s;
+}
+
+.crm-container ul li.crm-tab-button, .ui-tabs-tab, .ui-widget-header .ui-state-default{
+  &.ui-state-active{
+    border-bottom: $so2 solid white;
+  }
+  &.crm-count-0{
+    a, em{
+      color: $grey !important;
+    }
+  }
+  background: none;
+  background-color: transparent;
+  border: none;
+  margin: $so2 $s;
+  a, em{
+    color: $white;
+    font-weight: 700;
+  }
+}
+
+// Accordions
+@mixin accordion() {
+  background-color: inherit;
+  border-radius: 0;
+  color: $black;
+}
+$accordianBorder: 3px solid $lightGrey;
+
+#crm-container.crm-container{
+  .crm-accordion-wrapper .crm-master-accordion-header,
+  .crm-accordion-wrapper .crm-master-accordion-header:hover,
+  .crm-accordion-header,
+  .crm-accordion-header.active,
+  .crm-accordion-header:hover,
+  .crm-accordion-header.active:hover,
+  {
+    @include accordion();
+    border-top: $accordianBorder;
+    margin-top: $s;
+    font-weight: 700;
+    background-color: $lightGrey;
+    border-left: $accordianBorder;
+    padding-left: $s;
+    background-image: none;
+  }
+  .crm-accordion-body{
+    @include accordion();
+    border: $accordianBorder;
+    border-top: none;
+    padding: $s;
+  }
+  .collapsed .crm-accordion-header{
+    border-top: $accordianBorder;
+    border-left: none;
+    background-image: none;
 
   }
 }
+// Forms
+
+.crm-container{
+  .form-layout,.form-layout-compressed{
+    td{
+      padding: $s;
+    }
+    td.label{
+      vertical-align: middle;
+      text-align: left;
+    }
+  }
+}
+
+.crm-container div#searchForm table.form-layout td{
+  border: none;
+}
+
+.crm-container .description{
+  font-style: italic;
+}
+
+// Help
+.crm-container .help{
+  color: $orange;
+}
+
+// Menu
+
+#civicrm-menu{
+  padding: $so2;
+}
+#civicrm-menu, #root-menu-div ul.menu-ul{
+  .activetarget{
+    background-color: $lightGrey;
+  }
+  background-color: $white;
+  color: $black;
+  border-color: $grey;
+  li{
+    padding: $so2 !important;
+    margin: 0 !important;
+    &.menu-separator{
+      padding: 0 !important;
+      border-bottom: 1px solid $grey;
+    }
+    &.active{
+      background-color: $purple;
+      color: $white;
+      a{
+        color: $white;
+      }
+    }
+    a{
+      color: $black;
+    }
+  }
+}
+
+// #root-menu-div ul.menu-ul li.active{
+//   color: white;
+// }
+
+#root-menu-div .menu-div{
+}
+
+li.menumain{
+  border: none;
+}
+
+.shadowbox1,
+.shadowbox2,
+.shadowbox3,
+{
+  display: none;
+}
+
+#civicrm-menu{
+  width: 100% !important;
+}
+
+.tivy-grid-main 

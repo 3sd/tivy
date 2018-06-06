@@ -4,5 +4,5 @@ core = 7.x
 
 stylesheets[all][] = css/tivy.css
 
-regions[main] = Main
-regions[right] = Right
+regions[content] = Content
+regions[left] = Left
