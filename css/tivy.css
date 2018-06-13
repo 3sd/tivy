@@ -24,6 +24,11 @@ body {
   background-color: #dddddf;
   border-right: 1px solid silver;
   padding: 10px; }
+  .tivy-grid-menu ul.menu {
+    padding-left: 0; }
+    .tivy-grid-menu ul.menu li {
+      list-style: none;
+      margin-left: 0; }
 
 .tivy-grid-main {
   padding: 10px; }

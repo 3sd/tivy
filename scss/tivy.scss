@@ -32,6 +32,13 @@ body {
   background-color: $lightGrey;
   border-right: 1px solid silver;
   padding: $s;
+  ul.menu{
+    padding-left: 0;
+    li{
+      list-style: none;
+      margin-left: 0;
+    }
+  }
 }
 
 .tivy-grid-main {
