@@ -3,6 +3,9 @@
   font-family: "Poppins";
   font-size: 14px; }
 
+pre, pre * {
+  font-family: monospace; }
+
 h1 {
   font-size: 1.2em; }
 

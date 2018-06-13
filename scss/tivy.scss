@@ -8,6 +8,9 @@ $s: 10px;
   font-family: $default-font-family;
   font-size: 14px;
 }
+pre, pre * {
+  font-family: monospace;
+}
 
 h1{
   font-size: 1.2em;
