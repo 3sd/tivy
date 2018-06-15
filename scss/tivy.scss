@@ -26,6 +26,11 @@ body {
   display: grid;
   grid-template-columns: [menu] 200px [main] auto;
   grid-template-rows: minmax(100vh, auto);
+  margin-top: 27px;
+}
+
+body.toolbar .tivy-grid-container {
+  margin-top: 0px;
 }
 
 .tivy-grid-menu {
@@ -45,10 +50,13 @@ body {
   padding: $s;
 }
 body.page-civicrm-contact-view .tivy-grid-main{
-  margin-top: 2em;
-  .crm-summary-display_name{
+  margin-top: 2 * $s;
+
+  #crm-container .crm-summary-display_name{
     font-weight: 700;
     font-size: 1.2em;
+    padding-top: 2 * $s;
+    padding-bottom: 0;
   }
 }
 .breadcrumb{
